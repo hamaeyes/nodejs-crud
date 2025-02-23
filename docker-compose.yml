@@ -1,0 +1,15 @@
+version: '3'
+services:
+ mysite-db:
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: 'mysite'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'root!'
+    ports:
+      - '3306:3306'
+    volumes:
+      - 'mysqldata:/var/lib/mysql'
+volumes:
+    mysqldata:
